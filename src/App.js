@@ -15,7 +15,7 @@ function App() {
     const hash = getTokenFromUrl();
     window.location.hash = "";
     const _token = hash.access_token;
-
+    console.log("token=====>", _token);
     if (_token) {
       dispatch({
         type: "SET_TOKEN",
@@ -38,9 +38,9 @@ function App() {
       {
         /* continue in morning */
       }
-      spotify.getPlaylist("").then((response) => {
+      spotify.getPlaylist("37i9dQZEVXbLZ52XmnySJg").then((response) => {
         dispatch({
-          type: "SET_DISCOVERED_WEEKLY",
+          type: "SET_DISCOVERE_WEEKLY",
           discover_weekly: response,
         });
       });
